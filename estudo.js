@@ -1,66 +1,64 @@
+// alert("Oi! Eu sou o Alert");
+// document.write("Estou na página.");
+// console.log("Eu estou no console.");
 let tabuada = 5;
+function alo(){
 
-function escreva(){
-    document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>");
-    document.write(tabuada + " x 2 = " + (tabuada*2) + "<br>");
-    document.write(tabuada + " x 3 = " + (tabuada*3) + "<br>");
-    document.write(tabuada + " x 4 = " + (tabuada*4) + "<br>");
-    document.write(tabuada + " x 5 = " + (tabuada*5) + "<br>");
-    document.write(tabuada + " x 6 = " + (tabuada*6) + "<br>");
-    document.write(tabuada + " x 7 = " + (tabuada*7) + "<br>");
-    document.write(tabuada + " x 8 = " + (tabuada*8) + "<br>");
-    document.write(tabuada + " x 9 = " + (tabuada*9) + "<br>");
-    document.write(tabuada + " x 10 = " + (tabuada*10) + "<br>");
+    let tabuada = document.getElementById("entrada").value;
+
+    document.write("<h1>Tabuada do " + tabuada + "</h1>");
+    document.write(tabuada + " x 1 = " + (tabuada*1)+"<br>");
+    document.write(tabuada + " x 2 = " + (tabuada*2)+"<br>");
+    document.write(tabuada + " x 3 = " + (tabuada*3)+"<br>");
+    document.write(tabuada + " x 4 = " + (tabuada*4)+"<br>");
+    document.write(tabuada + " x 5 = " + (tabuada*5)+"<br>");
+    document.write(tabuada + " x 6 = " + (tabuada*6)+"<br>");
+    document.write(tabuada + " x 7 = " + (tabuada*7)+"<br>");
+    document.write(tabuada + " x 8 = " + (tabuada*8)+"<br>");
+    document.write(tabuada + " x 9 = " + (tabuada*9)+"<br>");
+    document.write(tabuada + " x 10 = " + (tabuada*10));
 }
-
-function minhaTabuada(){
-    for(let i = 10; i >= 1; i--){
-        document.write("Tabuada do " + i + "<br>");
-        for(let j = 1; j <= 10; j++){
-            document.write(i + " x " + j + " = " + (j*i) + "<br>");
+// for(inicio, validaçao, manutençao)
+function escreva(){
+    for(var i=1; i <= 10; i++){
+        for(var j = 1; j <=10; j++){
+            document.write(i + " x " + j + " = " + (j*i)+"<br>");
         }
-        document.write("<br>");       
+        document.write("<br>");
     }
 }
 
-function cubo(){
-    for(let i = 20; i >= 2; i--){
-        document.write("O cubo de "+i+" é "+i+" x "+i+" x "+i+" = "+(i*i*i)+"<br>");
+function quadrado(){
+    for(var i = 2; i < 11; i++){
+        document.write("O quadrado de " + i + " é " + (i*i)+"<br>");
     }
 }
 function moeda(atual){
     return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
-function mat(){  
-    let v = document.getElementById("valor").value;
-    let j = document.getElementById("juros").value;
-    let t = document.getElementById("messes").value;
-  
-    if(!Number(v)){
-        alert("O Capitual deve ser numérico.");
-        document.getElementById("juros").value = "";
-        document.getElementById("juros").focus();
-        return
+function total(){
+    let val = document.getElementById("valor").value;
+    let ju = document.getElementById("juros").value;
+    
+    let t = document.getElementById("meses").value;
+    let resultado = 0;
+    let saida = "";
+    for(let m = 1; m <= t; m++){
+        resultado = (val * ((ju/100)+1));
+        val = resultado;
+         mes += "Mês " + i + " valor: " + moeda(r) + "<br>";
+       //document.write("Mês " + m + " valor de " + moeda(val) + "<br>");
+       c = r;
     }
-    if(!Number(j)){
-        alert("Juros deve ser número.");
-        document.getElementById("valor").value = "";
-        document.getElementById("valor").focus();
-        return
-    }
-    if(!Number(t)){
-        alert("Juros deve ser número.");
-        document.getElementById("meses").value = "";
-        document.getElementById("meses").focus();
-        return
-    }
-    let r = 0;
-    for(let i=1; i<=t; i++){
-        r = v * (1+(j/100));
-        v = r;
-        //document.write("Mês " + i + " = " + moeda(r) + "<br>");
-        
-    }
-    document.getElementById("totalGeral").innerHTML = "Total: " +moeda(r);
-    //document.write("Resultado " + moeda(r));
+    document.getElementById("mes").innerHTML=mes;
+    document.getElementById("resultado").innerHTML = "Total: " +moeda(r);
+    // document.write("Resultado: " + moeda(r));
+}
+
+function Limpar(){
+    document.getElementById("mes").innerHTML ="";
+    document.getElementById("total").innerHTML ="0,00";
+    document.getElementById("valor").innerHTML ="";
+    document.getElementById("juros").innerHTML ="";
+    document.getElementById("meses").innerHTML ="";
 }
