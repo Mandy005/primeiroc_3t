@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>primeiro C</title>
+    <title>Terceiro Trimestre</title>
     <script src="estudo.js"></script>
+
     <link rel="stylesheet" href="geral.css">
 
 </head>
-
 <body>
     <div class="calculadora">
-        <div id="spTotal">
-            <span id="totalGeral">Total: 0,00</span><br>
-        </div>
-        Valor: <input id="valor" placeholder="R$" type="text"><br>
-        Juros(Mensais): <input id="juros" placeholder="% mês" type="text"><br>
-        N°. de Messes: <input id="messes" placeholder="tempo" type="text"><br>
-        <button onclick="total()">Calcula</button>
-    </div></br>
 
-    <span id="mes">Meses</span>
+        <div class="spResultado">
+            <span id="total">0,00</span><br>
+        </div>
+        
+        Capital: <input id="valor" type="text"> <br>
+        Taxa de Juros: <input id="juros" type="text"> <br>
+        Quantidade meses: <input id="meses" type="text"> <br>
+        <button id="btnCalc" onclick="total()">Calcular</button>
+        <button id="btnCalc" onclick="Limpar()">Limpar</button>
+
+        <div class="spLista">
+           <span id="mes"></span>
+        </div>
 
     </div>
-
-    <br><br><br><br>
-    <span id="resultado">0,00</span><br>
-    Valor 1: <input id="v1" type="text"><br>
-    Valor 2: <input id="v2" type="text"><br>
-    Valor 3: <input id="v3" type="text"><br>
-    <button onclick="media()">Calcular Média</button>
-    <button onclick="soma() ">Calcular Soma</button>
-
-
+    <div>
+        <span id="mes">Mês a Mês</span>
+    </div>
 </body>
-
 </html>
