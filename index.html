@@ -12,22 +12,27 @@
 
 </head>
 <body>
+
+    <input type="checkbox" id="talcFin">
+
     <div class="calculadora">
 
+       <label for="calcFin"><h3>Financeira</h3></label>
+      <div class="calcF">
         <div class="spResultado">
             <span id="total">0,00</span><br>
         </div>
         
         Capital: <input id="valor" type="text"> <br>
         Taxa de Juros: <input id="juros" type="text"> <br>
-        Quantidade meses: <input id="meses" type="text"> <br>
+        Nr. de Meses: <input id="meses" type="text"> <br>
         <button id="btnCalc" onclick="total()">Calcular</button>
         <button id="btnCalc" onclick="Limpar()">Limpar</button>
 
         <div class="spLista">
            <span id="mes"></span>
         </div>
-
+    </div>
     </div>
     <div>
         <span id="mes">Mês a Mês</span>
