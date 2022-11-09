@@ -1,4 +1,4 @@
-.calculadora {
+..calculadora {
     background: rgb(252, 168, 14);
     width: 200px;
     padding: 10px;
@@ -20,4 +20,13 @@
     color: rgb(90, 122, 228);
     padding: 4px;
     margin: 2px;
+}
+.calcF{
+    display: none;
+}
+#calcFin:checked + #calculadora .calcF {
+    display: block;
+}
+#calcFin {
+    display: none;
 }
