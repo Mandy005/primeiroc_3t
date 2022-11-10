@@ -1,64 +1,86 @@
-// alert("Oi! Eu sou o Alert");
-// document.write("Estou na página.");
-// console.log("Eu estou no console.");
-let tabuada = 5;
-function alo(){
-
-    let tabuada = document.getElementById("entrada").value;
-
-    document.write("<h1>Tabuada do " + tabuada + "</h1>");
-    document.write(tabuada + " x 1 = " + (tabuada*1)+"<br>");
-    document.write(tabuada + " x 2 = " + (tabuada*2)+"<br>");
-    document.write(tabuada + " x 3 = " + (tabuada*3)+"<br>");
-    document.write(tabuada + " x 4 = " + (tabuada*4)+"<br>");
-    document.write(tabuada + " x 5 = " + (tabuada*5)+"<br>");
-    document.write(tabuada + " x 6 = " + (tabuada*6)+"<br>");
-    document.write(tabuada + " x 7 = " + (tabuada*7)+"<br>");
-    document.write(tabuada + " x 8 = " + (tabuada*8)+"<br>");
-    document.write(tabuada + " x 9 = " + (tabuada*9)+"<br>");
-    document.write(tabuada + " x 10 = " + (tabuada*10));
-}
-// for(inicio, validaçao, manutençao)
-function escreva(){
-    for(var i=1; i <= 10; i++){
-        for(var j = 1; j <=10; j++){
-            document.write(i + " x " + j + " = " + (j*i)+"<br>");
-        }
-        document.write("<br>");
+        documento . write ( "O cubo de " + i + " é " + i + " x " + i + " x " + i + " = " + ( i * i * i ) + "<br>" ) ;
     }
 }
+função  moeda ( atual ) {
+    retorno  atual . toLocaleString ( 'pt-br' , { estilo : 'moeda' ,  moeda : 'BRL' } ) ;
+}
+ tapete de função ( ) {  
+    deixe  v  =  documento . getElementById ( "valor" ) . valor ;
+função  moeda ( atual )  {
+    retorno  atual . toLocaleString ( 'pt-br' ,  {  estilo : 'moeda' ,  moeda : 'BRL'  } ) ;
+  }
 
-function quadrado(){
-    for(var i = 2; i < 11; i++){
-        document.write("O quadrado de " + i + " é " + (i*i)+"<br>");
-    }
-}
-function moeda(atual){
-    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-}
-function total(){
-    let val = document.getElementById("valor").value;
-    let ju = document.getElementById("juros").value;
-    
-    let t = document.getElementById("meses").value;
-    let resultado = 0;
-    let saida = "";
-    for(let m = 1; m <= t; m++){
-        resultado = (val * ((ju/100)+1));
-        val = resultado;
-         mes += "Mês " + i + " valor: " + moeda(r) + "<br>";
-       //document.write("Mês " + m + " valor de " + moeda(val) + "<br>");
-       c = r;
-    }
-    document.getElementById("mes").innerHTML=mes;
-    document.getElementById("resultado").innerHTML = "Total: " +moeda(r);
-    // document.write("Resultado: " + moeda(r));
-}
+  função  total ( )  {
+    seja  c  =  documento . getElementById ( "valor" ) . valor ;
+    seja  j  =  documento . getElementById ( "juros" ) . valor ;
+    seja  t  =  documento . getElementById ( "bagunça" ) . valor ;
+    seja  t  =  documento . getElementById ( "meses" ) . valor ;
+    let  r  =  moeda ;
 
-function Limpar(){
-    document.getElementById("mes").innerHTML ="";
-    document.getElementById("total").innerHTML ="0,00";
-    document.getElementById("valor").innerHTML ="";
-    document.getElementById("juros").innerHTML ="";
-    document.getElementById("meses").innerHTML ="";
+
+    if ( ! Número ( v ) ) {
+        alert ( "O Capital deve ser numérico." ) ;
+        documento . getElementById ( "juros" ) . valor  =  "" ;
+        documento . getElementById ( "juros" ) . foco ( ) ;
+        Retorna
+    if  ( ! Número ( c ) )  {
+
+      alert ( "O capital deve ser numeros." ) ;
+      documento . getElementById ( "valor" ) . valor  =  "" ;
+      documento . getElementById ( "valor" ) . foco ( ) ;
+      retorno ;
+    }
+    if ( ! Número ( j ) ) {
+        alert ( "Juros deve ser número." ) ;
+        documento . getElementById ( "valor" ) . valor  =  "" ;
+        documento . getElementById ( "valor" ) . foco ( ) ;
+        Retorna
+
+    if  ( ! Número ( j ) )  {
+      alert ( "O juros deve ser numeros." ) ;
+      documento . getElementById ( "juros" ) . valor  =  "" ;
+      documento . getElementById ( "juros" ) . foco ( ) ;
+      retorno ;
+    }
+    if ( ! Número ( t ) ) {
+        alert ( "Juros deve ser número." ) ;
+        documento . getElementById ( "meses" ) . valor  =  "" ;
+        documento . getElementById ( "meses" ) . foco ( ) ;
+        Retorna
+
+    if  ( ! Número ( t ) )  {
+      alert ( "O meses deve ser numeros." ) ;
+      documento . getElementById ( "meses" ) . valor  =  "" ;
+      documento . getElementById ( "meses" ) . foco ( ) ;
+      retorno ;
+    }
+    seja  r  =  0 ;
+    for ( deixe  i = 1 ;  i <= t ;  i ++ ) {
+        r  =  v  *  ( 1 + ( j / 100 ) ) ;
+        v  =  r ;
+        //document.write("Mês " + i + " = " + moeda(r) + "<br>");
+
+    deixe -  me  =  "" ;
+
+    for  ( deixe  i  =  1 ;  i  <=  t ;  i ++ )  {
+      r  =  c  *  ( 1+ ( j / 100 ) ) ; _    
+      mes  +=  "Mês "  +  i  +  " valor: "  +  moeda ( r )  +  "<br>" ;
+      //document.write("Mês " + i + " valor: " + moeda(r) + "<br>");
+      c  =  r ;
+    }
+    documento . getElementById ( "totalGeral" ) . innerHTML  =  "Total: "  + moeda ( r ) ;
+    //document.write("Resultado " + moeda(r));
 }
+    documento . getElementById ( "mes" ) . innerHTML = mes ;
+
+    documento . getElementById ( "total" ) . innerHTML = "Total: " + moeda ( r ) ;
+    //document.write("Resultado: " + moeda(r));
+  }
+
+  função  limpar ( ) {
+    documento . getElementById ( "mes" ) . innerHTML  =  "" ;
+    documento . getElementById ( "total" ) . innerHTML  =  "0,00" ;
+    documento . getElementById ( "valor" ) . valor  =  "" ;
+    documento . getElementById ( "juros" ) . valor  =  "" ;
+    documento . getElementById ( "meses" ) . valor  =  "" ; 
+  
